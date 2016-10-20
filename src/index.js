@@ -1,3 +1,5 @@
 const style = require('./index.scss');
 
-console.log('Hello everybody');
+if (true) {
+	console.log(style);
+}

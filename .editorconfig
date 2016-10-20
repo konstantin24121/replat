@@ -1,0 +1,11 @@
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{js, html}]
+charset = utf-8
+
+[*.{jsx}]
+indent_style = tabs
+indent_size = 4
+trim_trailing_whitespace = true
