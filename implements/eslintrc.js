@@ -1,4 +1,4 @@
-{
+module.exports = {
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017,
@@ -14,6 +14,7 @@
   },
   "rules": {
     "no-tabs": 0,
+    "linebreak-style": 0,
     "no-console": 0,
     "indent": [1, "tab"],
   },
