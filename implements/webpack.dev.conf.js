@@ -55,7 +55,11 @@ module.exports = {
     },
     postcss: function() {
         return [
-            require('postcss-nested')
+            require('postcss-nested'),
+            require('postcss-simple-vars'),
+            require('postcss-custom-media'),
+            require('postcss-media-minmax'),
+            require('postcss-conditionals'),
         ];
     },
 }

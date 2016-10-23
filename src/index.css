@@ -1,6 +1,16 @@
+$var: green;
+@custom-media --small-viewport (width <= 30em);
+
 .block{
 	display: flex;
+	@if 3 < 5 {
+		background: green;
+	}
 	&__element{
-		color: blue;
+		color: $var;
+
+		@media (--small-viewport){
+			color: black;
+		}
 	}
 }
