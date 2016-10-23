@@ -1,5 +1,3 @@
-const style = require('./index.scss');
+const style = require('./index.css');
 
-if (true) {
-	console.log(style);
-}
+console.log(style)
