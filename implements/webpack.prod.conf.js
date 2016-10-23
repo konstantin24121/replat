@@ -10,7 +10,6 @@ const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT + 1) || 3001;
 
 module.exports = {
-    devtool: 'inline-source-map',
     context: path.resolve(__dirname, '../'),
     entry: {
         'main': [
@@ -33,10 +32,10 @@ module.exports = {
                 loader: 'json-loader'
             }, {
                 test: /\.scss$/,
-                loader: 'style!css?modules&importLoaders=2!postcss!sass'
+                loader: ExtractTextPlugin.extract('css?modules&importLoaders=2!sass'),
             }, {
                 test: /\.css$/,
-                loader: 'style!css?importLoaders=2!postcss'
+                loader: ExtractTextPlugin.extract('css?modules&importLoaders=2!postcss'),
             },
             { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
             { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -65,4 +64,7 @@ module.exports = {
             require('postcss-easings'),
         ];
     },
+    plugins:[
+        new ExtractTextPlugin('styles/[name].css?v=[hash]'),
+    ],
 }

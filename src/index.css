@@ -1,0 +1,17 @@
+$var: green;
+@custom-media --small-viewport (width <= 30em);
+
+.block{
+	display: flex;
+
+	transform: skewX(25deg) rotateZ(45deg);
+	transition: all 0.3s easeInSine;
+
+	&__element{
+		color: $var;
+
+		@media (--small-viewport){
+			color: black;
+		}
+	}
+}
