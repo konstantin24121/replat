@@ -10,7 +10,6 @@ const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT + 1) || 3001;
 
 module.exports = {
-    devtool: 'inline-source-map',
     context: path.resolve(__dirname, '../'),
     entry: {
         'main': [
@@ -60,6 +59,9 @@ module.exports = {
             require('postcss-custom-media'),
             require('postcss-media-minmax'),
             require('postcss-conditionals'),
+            require('postcss-mixins'),
+            require('postcss-cssnext')({ browsers: ['last 2 versions'] }),
+            require('postcss-easings'),
         ];
     },
     plugins:[

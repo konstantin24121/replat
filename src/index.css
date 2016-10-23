@@ -3,9 +3,10 @@ $var: green;
 
 .block{
 	display: flex;
-	@if 3 < 5 {
-		background: green;
-	}
+
+	transform: skewX(25deg) rotateZ(45deg);
+	transition: all 0.3s easeInSine;
+
 	&__element{
 		color: $var;
 

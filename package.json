@@ -13,7 +13,7 @@
     "build": "better-npm-run build",
     "lint": "npm run eslint && npm run stylelint",
     "stylelint": "stylelint src/*.scss --config implements/stylelintrc.json --syntax scss",
-    "eslint": "eslint -c implements/eslintrc.js src"
+    "eslint": "eslint -c implements/eslintrc.js src",
   },
   "betterScripts": {
     "build": {
@@ -25,6 +25,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^6.5.1",
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
@@ -46,9 +47,12 @@
     "json-loader": "^0.5.4",
     "node-sass": "^3.10.1",
     "postcss-conditionals": "^2.0.2",
+    "postcss-cssnext": "^2.8.0",
     "postcss-custom-media": "^5.0.1",
+    "postcss-easings": "^0.3.0",
     "postcss-loader": "^1.0.0",
     "postcss-media-minmax": "^2.1.2",
+    "postcss-mixins": "^5.4.0",
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^3.0.0",
     "sass-loader": "^4.0.2",
