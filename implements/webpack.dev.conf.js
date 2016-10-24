@@ -2,6 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 
+// Plugins
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 const assetsPath = path.resolve(__dirname, '../static/dist');
 const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT + 1) || 3001;
@@ -31,6 +34,9 @@ module.exports = {
             }, {
                 test: /\.scss$/,
                 loader: 'style!css?modules&importLoaders=2!postcss!sass'
+            }, {
+                test: /\.css$/,
+                loader: 'style!css?importLoaders=2!postcss'
             },
             { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
             { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -49,8 +55,14 @@ module.exports = {
     },
     postcss: function() {
         return [
-            require('precss'),
-            require('autoprefixer')
+            require('postcss-nested'),
+            require('postcss-simple-vars'),
+            require('postcss-custom-media'),
+            require('postcss-media-minmax'),
+            require('postcss-conditionals'),
+            require('postcss-mixins'),
+            require('postcss-cssnext')({ browsers: ['last 2 versions'] }),
+            require('postcss-easings'),
         ];
-    }
+    },
 }
