@@ -4,7 +4,7 @@ $var: green;
 .block{
 	display: flex;
 
-	transform: skewX(25deg) rotateZ(45deg);
+	// transform: skewX(25deg) rotateZ(45deg);
 	transition: all 0.3s easeInSine;
 
 	&__element{

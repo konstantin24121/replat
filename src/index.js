@@ -1,3 +1,1 @@
-const style = require('./index.css');
-
-console.log(style)
+console.log('This this a app,  Bitch');
