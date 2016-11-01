@@ -1,7 +1,5 @@
 implements -- инвертарь, конфиги для всего и вся что необходимо для сборки
  ├ dev-server.js -- скрипт для запуска dev-сервера
- ├ eslintrc.js -- конфиг для ESLint
- ├ stylelint.json -- конфиг для Stylelint
  ├ webpack.dev.conf.js -- конфиг для запуска webpack в dev-режиме
  └ webpack.dev.conf.js -- конфиг для запуска webpack в production-режиме
 node_modules -- зависимости
@@ -14,7 +12,8 @@ src -- основной код приложения
  │ │ ├ index.spec.js -- unit тесты компонента
  │ │ └ other -- любые другие ресурсы (графика, или что-то еще) касающиеся только компонента
  │ └ AnotherComponent
- ├ config -- конфигурационныу файлы приложения
+ ├ config -- конфигурационные файлы приложения
+ │ └ routes.js -- роуты приложения
  ├ containers -- папка с smart компонентами
  │ ├ SomeContainer -- папка с кодом контейнера
  │ │ ├ index.jsx -- главный файл контейнера
@@ -37,7 +36,8 @@ static -- рабочая папка, со собранной статикой
 .babelrc -- конфиг для babel
 .editorconfig -- конфиг для IDE или TR
 .eslintignore -- файл игнора для ESlint
+.eslintrc.js -- конфиг для ESLint
 .gitignore -- файл игнора для Git
 env.json -- конфигурация проекта, содержащая основные настойки для запуска
 end.json.dist -- резервный файл, хранящийся в СКВ
-
+stylelint.json -- конфиг для Stylelint
