@@ -13,8 +13,8 @@
     "start": "better-npm-run start-dev",
     "build": "better-npm-run build",
     "lint": "npm run eslint && npm run stylelint",
-    "stylelint": "stylelint src/*.scss --config implements/stylelintrc.json --syntax scss",
-    "eslint": "eslint -c implements/eslintrc.js src"
+    "stylelint": "stylelint src/*.css --config .stylelintrc --syntax postcss",
+    "eslint": "eslint -c .eslintrc src"
   },
   "betterScripts": {
     "build": {
