@@ -9,6 +9,8 @@ const assetsPath = path.resolve(__dirname, '../static/dist');
 const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT + 1) || 3001;
 
+const ENV = require('../env.json');
+
 module.exports = {
 	devtool: 'inline-source-map',
 	context: path.resolve(__dirname, '../'),
@@ -16,7 +18,7 @@ module.exports = {
 	  'main': [
 	  	`webpack-dev-server/client?http://${host}:${port}`,
 	    'webpack/hot/only-dev-server',
-		  './src/index.js'
+		  './src/client.js'
 	  ]
 	},
 	output: {
@@ -67,8 +69,12 @@ module.exports = {
 			require('postcss-easings'),
 		];
 	},
-
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+      __DEVELOPMENT__: true,
+      __ENV__: JSON.stringify(process.env.NODE_ENV),
+      __DEVTOOLS__: ENV.devtools
+    }),
 	],
 }
