@@ -7,7 +7,7 @@ export default function(state = initialState, action){
 	case 'INC':
 		return {...state, counter: ++state.counter}
 	case 'DEC':
-		return state.set('color', action.payload)
+		return {...state, counter: --state.counter}
 	default:
 		return state;
 	}
