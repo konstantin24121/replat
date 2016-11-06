@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -7,7 +9,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const assetsPath = path.resolve(__dirname, '../static/dist');
 const host = (process.env.HOST || 'localhost');
-const port = (+process.env.PORT + 1) || 3001;
+const port = (+process.env.PORT) || 3000;
 
 const ENV = require('../env.json');
 
@@ -40,7 +42,7 @@ module.exports = {
 				loader: 'style!css?modules&importLoaders=2!postcss!sass'
 			}, {
 				test: /\.css$/,
-				loader: 'style!css?importLoaders=2!postcss'
+				loader: 'style!css?modules&localIdentName=[path][name]--[local]&sourceMap!postcss'
 			},
 			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
 			{ test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -49,7 +51,6 @@ module.exports = {
 			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
 		]
 	},
-	progress: true,
 	resolve: {
 		modulesDirectories: [
 			'src',

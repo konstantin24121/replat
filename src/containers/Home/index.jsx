@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import {connect} from 'react-redux';
 import * as testActions from 'actions/testAction';
 
+import TestComponent from 'components/TestComponent';
+
 class Home extends Component {
   static propTypes = {
     name: PropTypes.string,
@@ -16,8 +18,8 @@ class Home extends Component {
     return (
       <div>
       	Home. Counter from store - {counter}
-        <button onClick={this.props.incrementCounter}>inc</button>
-        <button onClick={this.props.decrementCounter}>dec</button>
+        <TestComponent name="inc" onClick={this.props.incrementCounter} />
+        <TestComponent name="dec" onClick={this.props.decrementCounter} />
       </div>
     );
   }

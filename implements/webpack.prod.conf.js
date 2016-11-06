@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -7,7 +9,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const assetsPath = path.resolve(__dirname, '../static/dist');
 const host = (process.env.HOST || 'localhost');
-const port = (+process.env.PORT + 1) || 3001;
+const port = (+process.env.PORT) || 3000;
 
 module.exports = {
 	context: path.resolve(__dirname, '../'),
