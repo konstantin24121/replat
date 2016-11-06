@@ -4,18 +4,15 @@ import { style } from './style.css';
 export default class TestComponent extends PureComponent {
 	static propTypes = {
 		name: PropTypes.string,
-		count: PropTypes.number,
 		onClick: PropTypes.func,
 	};
 
 	static defaultProps = {
 		name: 'btn',
-		count: 0,
 		onClick: () => {},
 	}
 
 	render() {
-		console.log(style);
 		const { name, onClick } = this.props;
 		return (
 			<button className={style} onClick={onClick}>{name}</button>

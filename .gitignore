@@ -21,4 +21,4 @@ jspm_packages
 static/dist/*
 
 #Other
-env.json
+.env

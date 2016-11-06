@@ -1,11 +1,11 @@
 /* eslint-disable */
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
 
-var webpackConfig = require('./webpack.dev.conf');
+const webpackConfig = require('./webpack.common');
 
-var host = (process.env.HOST || 'localhost');
-var port = (+process.env.PORT) || 3000;
+const host = (process.env.HOST || 'localhost');
+const port = (+process.env.PORT) || 3000;
 
 new WebpackDevServer(webpack(webpackConfig), {
   contentBase: './static',
@@ -19,5 +19,5 @@ new WebpackDevServer(webpack(webpackConfig), {
   },
 }).listen(port, host, function (err, result) {
   if (err) { return console.log(err); }
-  console.log('Listening at http://' + host + ':' + port + '/');
+  console.info('==> 💻  Open http://%s:%s in a browser to view the app.', host, port);
 });

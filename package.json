@@ -18,7 +18,7 @@
   },
   "betterScripts": {
     "build": {
-      "command": "webpack --verbose --colors --inline --progress --display-error-details --config implements/webpack.prod.conf.js",
+      "command": "webpack --verbose --colors --inline --progress --display-error-details --config implements/webpack.common.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -75,7 +75,8 @@
     "stylelint": "^7.5.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.15.0"
   },
   "engines": {
     "node": "5.6.0"
