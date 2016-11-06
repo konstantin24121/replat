@@ -2,12 +2,18 @@
 
 // Plugins
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		'main': [
+		'app': [
 			'./src/client.js'
 		]
+	},
+
+	output: {
+		path: 'public',
+		publicPath: '/',
 	},
 
 	module: {
@@ -21,6 +27,13 @@ module.exports = {
 		]
 	},
 	plugins:[
-		new ExtractTextPlugin('styles/[name].css?v=[hash]'),
+		new ExtractTextPlugin('bundle.css?v=[hash]'),
+
+		new HtmlWebpackPlugin({
+      template: 'static/index.tpl.html',
+      filename: 'index.html',
+      chunks: ['app'],
+      inject: 'body',
+    }),
 	],
 }

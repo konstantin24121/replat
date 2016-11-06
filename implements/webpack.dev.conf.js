@@ -1,6 +1,7 @@
 /* eslint-disable */
 const webpack = require('webpack');
 
+
 const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT) || 3000;
 
@@ -29,6 +30,7 @@ module.exports = {
 
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
       __DEVELOPMENT__: true,
       __ENV__: JSON.stringify(process.env.NODE_ENV),
