@@ -12,8 +12,8 @@ module.exports = {
 	entry: {
 	  'main': [
 	    'react-hot-loader/patch',
-	  	`webpack-dev-server/client?http://${host}:${port}`,
-		  './src/client.js'
+	  	'webpack-hot-middleware/client',
+		  path.join(__dirname, '../src/client.js')
 	  ]
 	},
 

@@ -15,7 +15,6 @@ const common = {
 	output: {
 		path: assetsPath,
 		filename: 'bundle.js',
-		// chunkFilename: '[name].js?v=[chunkhash]',
 		publicPath: 'http://' + host + ':' + port + '/dist/'
 	},
 
