@@ -1,6 +1,7 @@
 /* eslint-disable */
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
+const path = require('path');
 
 const webpackConfig = require('./webpack.common');
 
@@ -8,10 +9,10 @@ const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT) || 3000;
 
 new WebpackDevServer(webpack(webpackConfig), {
-  contentBase: './static',
+  contentBase: path.join(__dirname, '../static'),
   publicPath: webpackConfig.output.publicPath,
   hot: true,
-  progress: true,
+  historyApiFallback: true,
   stats: {
   	colors: true,
   	timings: true,

@@ -14,8 +14,8 @@ const common = {
 
 	output: {
 		path: assetsPath,
-		filename: '[name].js?v=[hash]',
-		chunkFilename: '[name].js?v=[chunkhash]',
+		filename: 'bundle.js',
+		// chunkFilename: '[name].js?v=[chunkhash]',
 		publicPath: 'http://' + host + ':' + port + '/dist/'
 	},
 
@@ -30,7 +30,7 @@ const common = {
 	module: {
 		loaders: [{
 				test: /\.jsx?$/,
-				exclude: /node_modules/,
+				include: [/src/],
 				loaders: ['babel']
 			}, {
 				test: /\.json$/,

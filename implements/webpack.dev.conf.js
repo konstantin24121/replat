@@ -1,9 +1,9 @@
 /* eslint-disable */
 const webpack = require('webpack');
-
+const path = require('path');
 
 const host = (process.env.HOST || 'localhost');
-const port = (+process.env.PORT) || 3000;
+const port = (+process.env.PORT ) || 3000;
 
 // Plugins
 
@@ -11,8 +11,8 @@ module.exports = {
 	devtool: 'inline-source-map',
 	entry: {
 	  'main': [
+	    'react-hot-loader/patch',
 	  	`webpack-dev-server/client?http://${host}:${port}`,
-	    'webpack/hot/only-dev-server',
 		  './src/client.js'
 	  ]
 	},

@@ -2,25 +2,26 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
-
-import getRoutes from 'config/routes';
-import createStore from 'config/store';
+import { AppContainer } from 'react-hot-loader';
+import Root from './Root';
 
 const dest = document.getElementById('app');
-const store = createStore();
-
-const component = (
-  <Router history={browserHistory}>
-    {getRoutes()}
-  </Router>
-);
 
 ReactDOM.render(
-  <Provider store={store} key="provider">
-    {component}
-  </Provider>,
-  dest
-);
+	<AppContainer>
+		<Root />
+	</AppContainer>, dest);
 
+if (module.hot) {
+  module.hot.accept('./Root', () => {
+    // If you use Webpack 2 in ES modules mode, you can
+    // use <App /> here rather than require() a <NextApp />.
+    const NextApp = require('./Root').default;
+    ReactDOM.render(
+      <AppContainer>
+         <NextApp />
+      </AppContainer>,
+      dest
+    );
+  })
+}
