@@ -3,13 +3,17 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import { browserHistory } from 'react-router';
+
 import Root from './Root';
+import createStore from 'config/store';
 
 const dest = document.getElementById('app');
+const store = createStore();
 
 ReactDOM.render(
 	<AppContainer>
-		<Root />
+		<Root store={store} history={browserHistory}/>
 	</AppContainer>, dest);
 
 if (module.hot) {
@@ -19,7 +23,7 @@ if (module.hot) {
     const NextApp = require('./Root').default;
     ReactDOM.render(
       <AppContainer>
-         <NextApp />
+         <NextApp store={store} history={browserHistory}/>
       </AppContainer>,
       dest
     );
