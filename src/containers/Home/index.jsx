@@ -13,12 +13,16 @@ class Home extends Component {
     super(props);
   }
 
+  handleClick = () => {
+    console.log('click');
+  };
+
   render() {
     const { counter } = this.props;
     return (
       <div>
-      	Home. Counter from store - {counter}
-        <TestComponent name="inc" onClick={this.props.incrementCounter} />
+      	Home. Counter from store zad - {counter}
+        <TestComponent name="inc" onClick={this.handleClick} />
         <TestComponent name="dec" onClick={this.props.decrementCounter} />
       </div>
     );
