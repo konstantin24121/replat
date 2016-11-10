@@ -15,8 +15,8 @@ const store = createStore();
 ReactDOM.render(
 	<AppContainer>
 		<Root store={store} history={browserHistory}/>
-
-	</AppContainer>, dest);
+	</AppContainer>, dest
+);
 
 if (module.hot) {
   module.hot.accept('./Root', () => {
