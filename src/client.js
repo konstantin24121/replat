@@ -6,6 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 
 import Root from './Root';
+
 import createStore from 'config/store';
 
 const dest = document.getElementById('app');
@@ -14,6 +15,7 @@ const store = createStore();
 ReactDOM.render(
 	<AppContainer>
 		<Root store={store} history={browserHistory}/>
+
 	</AppContainer>, dest);
 
 if (module.hot) {
