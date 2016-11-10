@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+const webpack = require('webpack');
+
 // Plugins
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -34,6 +36,12 @@ module.exports = {
       filename: 'index.html',
       chunks: ['app'],
       inject: 'body',
+    }),
+
+    new webpack.DefinePlugin({
+      __DEVELOPMENT__: false,
+      __ENV__: JSON.stringify(process.env.NODE_ENV),
+      __DEVTOOLS__: false
     }),
 	],
 }

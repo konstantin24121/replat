@@ -1,12 +1,12 @@
 import React from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
-import { DevTools } from 'containers';
 
 import getRoutes from 'config/routes';
 
 const renderDevTools = () => {
-  if (__DEVELOPMENT__) {
+  if (__DEVELOPMENT__ && __DEVTOOLS__) {
+  	const { DevTools } = require('containers');
     return <DevTools />
   }
   return null;

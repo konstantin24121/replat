@@ -7,13 +7,13 @@ const hotMiddleware = require('webpack-hot-middleware');
 
 const webpackConfig = require('./webpack.common');
 
-const app = express();
+const server = express();
 const compiler = webpack(webpackConfig);
 
 const host = (process.env.HOST || 'localhost');
 const port = (+process.env.PORT) || 3000;
 
-app.use(devMiddleware(compiler, {
+server.use(devMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath,
   historyApiFallback: true,
   stats: {
@@ -23,13 +23,13 @@ app.use(devMiddleware(compiler, {
   }
 }));
 
-app.use(hotMiddleware(compiler));
+server.use(hotMiddleware(compiler));
 
-app.get('*', function (req, res) {
+server.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../static/index.html'));
 });
 
-app.listen(port, host, function (err) {
+server.listen(port, host, function (err) {
   if (err) {
     return console.error(err);
   }
