@@ -6,6 +6,8 @@ import getRoutes from 'config/routes';
 
 const renderDevTools = () => {
   if (__DEVELOPMENT__ && __DEVTOOLS__) {
+  	if (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) return null;
+
   	const { DevTools } = require('containers');
     return <DevTools />
   }

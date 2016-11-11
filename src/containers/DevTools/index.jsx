@@ -9,7 +9,6 @@ import DockMonitor from 'redux-devtools-dock-monitor';
 import DiffMonitor from 'redux-devtools-diff-monitor';
 import MultipleMonitors from 'redux-devtools-multiple-monitors';
 import Dispatcher from 'redux-devtools-dispatch';
-import SliderMonitor from "redux-devtools-slider-monitor";
 
 // createDevTools takes a monitor and produces a DevTools component
 const DevTools = createDevTools(
@@ -24,17 +23,9 @@ const DevTools = createDevTools(
   >
     <MultipleMonitors>
       <Dispatcher />
-      <DiffMonitor theme='tomorrow' />
-      <SliderMonitor keyboardEnabled />
+      <DiffMonitor theme="tomorrow" />
     </MultipleMonitors>
   </DockMonitor>
 );
 
 export default DevTools;
-/* <DockMonitor
-    toggleVisibilityKey='ctrl-l'
-    changePositionKey='alt-l'
-    defaultIsVisible
-  >
-    <LogMonitor theme='tomorrow' />
-  </DockMonitor> */

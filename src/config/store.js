@@ -1,17 +1,30 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-// import { DevTools } from 'containers';
+import config from 'config';
+
 const middleware = [
 ];
 
+console.log('Holly shit');
+
 let enhancer;
-if (__DEVTOOLS__ && __DEVELOPMENT__) {
-	const { persistState } = require('redux-devtools');
-	const DevTools = require('containers/DevTools').default;
-	enhancer = compose(
-	  applyMiddleware(...middleware),
-	  DevTools.instrument(),
-	  persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-	);
+if (__DEVTOOLS__ && __DEVELOPMENT__ && typeof window === 'object') {
+	if (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
+		const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+			name: config.name,
+		}) || compose;
+		enhancer = composeEnhancers(
+			applyMiddleware(...middleware),
+		);
+		console.log('Open ReduxDevTools for debuging');
+	} else {
+		const { persistState } = require('redux-devtools');
+		const DevTools = require('containers/DevTools').default;
+		enhancer = compose(
+			applyMiddleware(...middleware),
+			DevTools.instrument(),
+			persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
+		);
+	}
 } else {
 	enhancer = applyMiddleware(...middleware);
 }

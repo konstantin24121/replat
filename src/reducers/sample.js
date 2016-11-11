@@ -1,5 +1,5 @@
 const initialState = {
-	counter: 1,
+	counter: 5,
 };
 
 export default function(state = initialState, action){
