@@ -8,7 +8,7 @@ const port = (+process.env.PORT ) || 3000;
 // Plugins
 
 module.exports = {
-	devtool: 'inline-source-map',
+	devtool: 'eval',
 	entry: {
 	  'main': [
 	    'react-hot-loader/patch',

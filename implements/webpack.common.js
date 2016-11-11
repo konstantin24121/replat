@@ -30,7 +30,7 @@ const common = {
 		loaders: [{
 				test: /\.jsx?$/,
 				include: [/src/],
-				loaders: ['babel']
+				loaders: ['babel?cacheDirectory=true'],
 			}, {
 				test: /\.json$/,
 				loader: 'json-loader'
