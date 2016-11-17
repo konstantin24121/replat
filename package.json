@@ -19,7 +19,7 @@
   },
   "betterScripts": {
     "start-dev": {
-      "command": "node ./implements/dev-server.js",
+      "command": "webpack-dashboard -- node ./implements/dev-server.js",
       "env": {
         "NODE_ENV": "development",
         "PORT": 3000
@@ -91,6 +91,7 @@
     "stylelint": "^7.5.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.2.0",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-merge": "^0.15.0"
