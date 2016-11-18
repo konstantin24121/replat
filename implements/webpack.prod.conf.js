@@ -1,10 +1,13 @@
 /* eslint-disable */
-
+const path = require('path');
 const webpack = require('webpack');
 
 // Plugins
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const publicFolder = path.join(__dirname, '../public');
 
 module.exports = {
 	entry: {
@@ -14,7 +17,7 @@ module.exports = {
 	},
 
 	output: {
-		path: 'public',
+		path: publicFolder,
 		publicPath: '/',
 	},
 
@@ -55,5 +58,13 @@ module.exports = {
         warnings: false
       }
     }),
+
+    //Analization
+    new BundleAnalyzerPlugin({
+    	analyzerMode: 'static',
+    	reportFilename: 'reports/report.html',
+    	generateStatsFile: true,
+    	statsFilename: 'reports/stats.json',
+    })
 	],
 }
