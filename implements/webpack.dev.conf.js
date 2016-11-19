@@ -32,8 +32,8 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
-      __DEVELOPMENT__: true,
       __ENV__: JSON.stringify(process.env.NODE_ENV),
+      __DEVELOPMENT__: true,
       __DEVTOOLS__: process.env.DEVTOOLS,
       __LOGLEVEL__: JSON.stringify(process.env.LOGLEVEL),
     }),

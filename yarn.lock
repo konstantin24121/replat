@@ -3038,10 +3038,6 @@ jshint@^2.8.0:
     shelljs "0.3.x"
     strip-json-comments "1.0.x"
 
-json-loader@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.4.tgz#8baa1365a632f58a3c46d20175fc6002c96e37de"
-
 json-schema@0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
@@ -3063,6 +3059,10 @@ json3@3.2.6:
 json3@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/json3/-/json3-3.3.2.tgz#3c0434743df93e2f5c42aee7b19bcb483575f4e1"
+
+json5-loader:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/json5-loader/-/json5-loader-0.6.0.tgz#01489d54b97b4ecc4f0d51518cd671014f5fd212"
 
 json5@^0.5.0:
   version "0.5.0"

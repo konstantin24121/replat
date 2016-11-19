@@ -23,7 +23,7 @@ const common = {
 			'src',
 			'node_modules'
 		],
-		extensions: ['', '.json', '.js', '.jsx']
+		extensions: ['', '.js', '.jsx', '.json', '.json5']
 	},
 
 	module: {
@@ -32,8 +32,8 @@ const common = {
 				include: [/src/],
 				loaders: ['babel?cacheDirectory=true'],
 			}, {
-				test: /\.json$/,
-				loader: 'json-loader'
+				test: /\.json5?$/,
+				loader: 'json5-loader'
 			},
 			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
 			{ test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -71,5 +71,5 @@ if ( process.env.NODE_ENV === 'development' ) {
 }else if ( process.env.NODE_ENV === 'production' ) {
 	module.exports = merge.smart(common, productionConfig);
 }else{
-	throw Error('\x1b[31m✖ ==> Our assembly have no ENV\x1b[0m like  ' + process.env.NODE_ENV);
+	throw Error(`\x1b[31m✖ ==> Our assembly have no ENV\x1b[0m like  ${process.env.NODE_ENV}`);
 }
