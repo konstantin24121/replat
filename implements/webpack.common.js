@@ -15,7 +15,7 @@ const common = {
 	output: {
 		path: assetsPath,
 		filename: 'bundle.js',
-		publicPath: 'http://' + host + ':' + port + '/dist/'
+		publicPath: `http://${host}:${port}/dist/`,
 	},
 
 	resolve: {
@@ -55,6 +55,12 @@ const common = {
 			require('postcss-easings'),
 		];
 	},
+
+	plugins: [
+		new webpack.ProvidePlugin({
+			log: 'loglevel',
+		}),
+	],
 }
 
 const developeConfig = require('./webpack.dev.conf.js');

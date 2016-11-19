@@ -4,8 +4,6 @@ import config from 'config';
 const middleware = [
 ];
 
-console.log('Holly shit');
-
 let enhancer;
 if (__DEVTOOLS__ && __DEVELOPMENT__ && typeof window === 'object') {
 	if (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
@@ -15,7 +13,7 @@ if (__DEVTOOLS__ && __DEVELOPMENT__ && typeof window === 'object') {
 		enhancer = composeEnhancers(
 			applyMiddleware(...middleware),
 		);
-		console.log('Open ReduxDevTools for debuging');
+		log.info('Open ReduxDevTools for debuging');
 	} else {
 		const { persistState } = require('redux-devtools');
 		const DevTools = require('containers/DevTools').default;
