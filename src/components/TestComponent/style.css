@@ -1,4 +1,6 @@
-:local(.style){
-	background-color: white;
-	border-radius: 5px;
+.style {
+  @import 'somethinl';
+
+  background-color: #fff;
+  border-radius: 5px;
 }
