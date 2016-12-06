@@ -1,12 +1,10 @@
 :local(.style) {
-	@import 'somethink';
-
 	background-color: #fff;
 	color: white;
 	border-radius: 0;
 
 	@media (min-height: 30px) {
-		background: url(/path/image.jpg);
+		color: green;
 	}
 
 	&::before {

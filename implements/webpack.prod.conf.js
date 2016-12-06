@@ -18,6 +18,7 @@ module.exports = {
 
 	output: {
 		path: publicFolder,
+    filename: 'bundle.js?v=[hash]',
 		publicPath: '/',
 	},
 
@@ -62,9 +63,9 @@ module.exports = {
     //Analization
     new BundleAnalyzerPlugin({
     	analyzerMode: 'static',
-    	reportFilename: 'reports/report.html',
+    	reportFilename: '../reports/report.html',
     	generateStatsFile: true,
-    	statsFilename: 'reports/stats.json',
+    	statsFilename: '../reports/stats.json',
     })
 	],
 }
