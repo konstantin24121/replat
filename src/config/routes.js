@@ -1,3 +1,5 @@
+/* eslint react/jsx-filename-extension: "off" */
+
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
@@ -7,8 +9,8 @@ export default () => {
 	return (
 		<Route path="/" component={App}>
 			{ /* Home (main) route */ }
-      <IndexRoute component={Home} />
-      <Route path='/page' component={Page} />
+			<IndexRoute component={Home} />
+			<Route path="/page" component={Page} />
 		</Route>
-	)
-}
+	);
+};
