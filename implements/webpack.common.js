@@ -21,9 +21,12 @@ const common = {
 	resolve: {
 		modulesDirectories: [
 			'src',
-			'node_modules'
+			'node_modules',
 		],
-		extensions: ['', '.js', '.jsx', '.json', '.json5']
+		extensions: ['', '.js', '.jsx', '.json', '.json5'],
+		alias: {
+			'@containers': 'containers',
+		},
 	},
 
 	module: {
@@ -71,5 +74,5 @@ if ( process.env.NODE_ENV === 'development' ) {
 }else if ( process.env.NODE_ENV === 'production' ) {
 	module.exports = merge.smart(common, productionConfig);
 }else{
-	throw Error(`\x1b[31m✖ ==> Our assembly have no ENV\x1b[0m like  ${process.env.NODE_ENV}`);
+	// throw Error(`\x1b[31m✖ ==> Our assembly have no ENV\x1b[0m like  ${process.env.NODE_ENV}`);
 }

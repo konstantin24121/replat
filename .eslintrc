@@ -8,7 +8,6 @@
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
   },
   "globals": {
     // Enviroment variables
@@ -28,6 +27,14 @@
     "react/jsx-indent": [1, "tab"],
 
     // Import
+    "import/extensions": [2, "never", { "svg": "always", "png": "always" }],
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "implements/webpack.common.js",
+      }
+    },
   },
   "plugins": [
     "react", "import", "jsx-a11y", "json"
