@@ -25,7 +25,6 @@ const common = {
 		],
 		extensions: ['', '.js', '.jsx', '.json', '.json5'],
 		alias: {
-			'@containers': 'containers',
 		},
 	},
 
@@ -74,5 +73,6 @@ if ( process.env.NODE_ENV === 'development' ) {
 }else if ( process.env.NODE_ENV === 'production' ) {
 	module.exports = merge.smart(common, productionConfig);
 }else{
+	module.exports = common;
 	// throw Error(`\x1b[31m✖ ==> Our assembly have no ENV\x1b[0m like  ${process.env.NODE_ENV}`);
 }

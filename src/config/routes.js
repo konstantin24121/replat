@@ -3,7 +3,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import { App, Home, Page } from '@containers';
+import { App, Home, Page } from 'containers';
 
 export default () => (
 	<Route path="/" component={App}>

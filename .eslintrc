@@ -27,13 +27,13 @@
     "react/jsx-indent": [1, "tab"],
 
     // Import
-    "import/extensions": [2, "never", { "svg": "always", "png": "always" }],
+    // "import/extensions": [2, "never", { "svg": "always", "png": "always" }],
   },
   "settings": {
     "import/resolver": {
       "webpack": {
         "config": "implements/webpack.common.js",
-      }
+      },
     },
   },
   "plugins": [
