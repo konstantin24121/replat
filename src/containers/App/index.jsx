@@ -1,19 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class App extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-  };
+	static propTypes = {
+		name: PropTypes.string,
+	};
 
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  render() {
-    return (
-      <div>
-      	{this.props.children}
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				{this.props.children}
+			</div>
+		);
+	}
 }

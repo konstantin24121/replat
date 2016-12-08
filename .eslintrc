@@ -13,6 +13,7 @@
     // Enviroment variables
     "__DEVELOPMENT__": true,
     "__LOGLEVEL__": true,
+    "__DEVTOOLS__": true,
 
     // Global library
     "log": true,
@@ -22,9 +23,17 @@
     "linebreak-style": 0,
     "no-console": 0,
     "indent": [1, "tab"],
+    "global-require": 0,
+    "no-underscore-dangle": 0,
+    "no-useless-constructor": 1,
+    "space-before-function-paren": 1,
+    "space-before-blocks": 1,
 
     // React
     "react/jsx-indent": [1, "tab"],
+    "react/prefer-stateless-function": 1,
+    "react/no-unused-prop-types": 1,
+    "react/jsx-indent-props": [1, "tab"],
 
     // Import
     // "import/extensions": [2, "never", { "svg": "always", "png": "always" }],

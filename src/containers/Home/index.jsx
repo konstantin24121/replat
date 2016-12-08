@@ -5,34 +5,40 @@ import * as testActions from 'actions/testAction';
 import TestComponent from 'components/TestComponent';
 
 class Home extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-  };
+	static propTypes = {
+		name: PropTypes.string,
 
-  constructor(props) {
-    super(props);
-  }
+		// Store
+		counter: PropTypes.number,
 
-  handleClick = () => {
-    console.log('click');
-  };
+		// Dispatchers
+		decrementCounter: PropTypes.func,
+	};
 
-  render() {
-    const { counter } = this.props;
-    return (
-      <div>
-      	Home. Counter from store zad - {counter}
-        <TestComponent name="inc" onClick={this.handleClick} />
-        <TestComponent name="dec" onClick={this.props.decrementCounter} />
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+	}
+
+	handleClick = () => {
+		console.log('click');
+	};
+
+	render() {
+		const { counter } = this.props;
+		return (
+			<div>
+				Home. Counter from store zad - {counter}
+				<TestComponent name="inc" onClick={this.handleClick} />
+				<TestComponent name="dec" onClick={this.props.decrementCounter} />
+			</div>
+		);
+	}
 }
 
-function mapStateToProps(state){
-  return {
-    counter: state.sample.counter
-  };
+function mapStateToProps(state) {
+	return {
+		counter: state.sample.counter,
+	};
 }
 
 function matchDispatchToProps(dispatch){

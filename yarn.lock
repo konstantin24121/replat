@@ -829,7 +829,7 @@ babel-plugin-transform-strict-mode@^6.18.0:
     babel-runtime "^6.0.0"
     babel-types "^6.18.0"
 
-babel-polyfill@^6.16.0:
+babel-polyfill, babel-polyfill@^6.16.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.16.0.tgz#2d45021df87e26a374b6d4d1a9c65964d17f2422"
   dependencies:
@@ -5181,6 +5181,15 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+redux-devtools:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/redux-devtools/-/redux-devtools-3.3.1.tgz#e2ed0b5335310935a25bbc73c60c09e522182850"
+  dependencies:
+    lodash "^4.2.0"
+    react-redux "^4.0.0"
+    redux "^3.5.2"
+    redux-devtools-instrument "^1.0.1"
+
 redux-devtools-diff-monitor@^5.0.5:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/redux-devtools-diff-monitor/-/redux-devtools-diff-monitor-5.0.5.tgz#4c27f4b52f5ed925856ffb2ad86954232ddd9b74"
@@ -5222,15 +5231,6 @@ redux-devtools-themes@^1.0.0:
   resolved "https://registry.yarnpkg.com/redux-devtools-themes/-/redux-devtools-themes-1.0.0.tgz#c482dce3c5373976045f40134907d9dcb3ae3d5d"
   dependencies:
     base16 "^1.0.0"
-
-redux-devtools@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/redux-devtools/-/redux-devtools-3.3.1.tgz#e2ed0b5335310935a25bbc73c60c09e522182850"
-  dependencies:
-    lodash "^4.2.0"
-    react-redux "^4.0.0"
-    redux "^3.5.2"
-    redux-devtools-instrument "^1.0.1"
 
 redux-slider-monitor@^1.0.7:
   version "1.0.7"
