@@ -1,70 +1,71 @@
+/* eslint-disable */
 const path = require('path');
-const fs = require('fs');
 const webpack = require('webpack');
 
 // Plugins
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const assetsPath = path.resolve(__dirname, '../static/dist');
-const host = (process.env.HOST || 'localhost');
-const port = (+process.env.PORT + 1) || 3001;
+const publicFolder = path.join(__dirname, '../public');
 
 module.exports = {
-	context: path.resolve(__dirname, '../'),
 	entry: {
-		'main': [
-			'./src/index.js'
+		'app': [
+			'./src/client.js'
 		]
 	},
+
 	output: {
-		path: assetsPath,
-		filename: '[name].js?v=[hash]',
-		chunkFilename: '[name].js?v=[chunkhash]',
-		publicPath: 'http://' + host + ':' + port + '/dist/'
+		path: publicFolder,
+    filename: 'bundle.js?v=[hash]',
+		publicPath: '/',
 	},
+
 	module: {
 		loaders: [{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				loaders: ['babel']
-			}, {
-				test: /\.json$/,
-				loader: 'json-loader'
-			}, {
 				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract('css?modules&importLoaders=2!sass'),
 			}, {
 				test: /\.css$/,
 				loader: ExtractTextPlugin.extract('css?modules&importLoaders=2!postcss'),
 			},
-			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
-			{ test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
-			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
 		]
 	},
-	progress: true,
-	resolve: {
-		modulesDirectories: [
-			'src',
-			'node_modules'
-		],
-		extensions: ['', '.json', '.js', '.jsx']
-	},
-	postcss: function() {
-		return [
-			require('postcss-nested'),
-			require('postcss-simple-vars'),
-			require('postcss-custom-media'),
-			require('postcss-media-minmax'),
-			require('postcss-conditionals'),
-			require('postcss-mixins'),
-			require('postcss-cssnext')({ browsers: ['last 2 versions'] }),
-			require('postcss-easings'),
-		];
-	},
 	plugins:[
-		new ExtractTextPlugin('styles/[name].css?v=[hash]'),
+		new ExtractTextPlugin('bundle.css?v=[hash]'),
+
+		new HtmlWebpackPlugin({
+      template: 'static/index.tpl.html',
+      filename: 'index.html',
+      chunks: ['app'],
+      inject: 'body',
+    }),
+
+    new webpack.DefinePlugin({
+    	'process.env': {
+	      'NODE_ENV': JSON.stringify('production')
+	    },
+      __DEVELOPMENT__: false,
+      __ENV__: JSON.stringify(process.env.NODE_ENV),
+      __DEVTOOLS__: false,
+    }),
+
+    // optimizations
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+
+    //Analization
+    new BundleAnalyzerPlugin({
+    	analyzerMode: 'static',
+    	reportFilename: '../reports/report.html',
+    	generateStatsFile: true,
+    	statsFilename: '../reports/stats.json',
+    })
 	],
 }
