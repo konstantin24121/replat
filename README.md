@@ -2,7 +2,7 @@
 It just cleared boilerplate for React, nothing more. It contains some helpful packages that you can use to start writing React/Redux application easely. Boilerplate includes better-npm-script for better enviroment settigs compatibility. Minimum gentelmen toolkit for react/redux (redux, router, devtools). For linting boilerplate use ESlint with airbnb presets and import, react and another plugins. For compiling css use postcss, for linting styleguide.
 
 ## Setup
-For project setup I recomend to use [yarn](https://yarnpkg.com/) insted of npm. But it's just a recomendation and you can use npm on this project all the same.
+For project setup I recomend to use [yarn](https://yarnpkg.com/) insted of npm. But it's just a recomendation and you can use npm with this project all the same.
 After cloning repository use command
 ```
 yarn
