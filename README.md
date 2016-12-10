@@ -1,8 +1,8 @@
-# Replat - an application build on React.
-It just clear boilerplate for React, nothing more. It contain some helpful packages that you can start write React/Redux application easely.
+# Replat - boilerplate for React/Redux.
+It just cleared boilerplate for React, nothing more. It contains some helpful packages that you can use to start writing React/Redux application easely. Boilerplate includes better-npm-script for better enviroment settigs compatibility. Minimum gentelmen toolkit for react/redux (redux, router, devtools). For linting boilerplate use ESlint with airbnb presets and import, react and another plugins. For compiling css use postcss, for linting styleguide.
 
 ## Setup
-For setup project I recomend use [yarn](https://yarnpkg.com/) insted of npm. But it's just recomendation and you all the same can use npm on this project.
+For project setup I recomend to use [yarn](https://yarnpkg.com/) insted of npm. But it's just a recomendation and you can use npm with this project all the same.
 After cloning repository use command
 ```
 yarn
@@ -14,9 +14,9 @@ npm i
 for instaling packages.
 
 ## Cli commands
-All expired commands you can find at *script* section into package.json. All description what any command do you can find at our wiki.
-One of often used
-* `yarn build` - build an application, generate statistic and page for analise
+You can find all expired commands in *script* section of package.json. All descriptions of command functionallity you can find in our wiki.
+One used
+* `yarn build` - build an application, generate statistic and page for analysis
 * `yarn start` - start dev server with HMR and DevTools
 * `yarn start:prod` - start prod server and generate dist files
 * `yarn lint` - lint js and scss code with eslint and stylelint

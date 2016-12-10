@@ -1,7 +1,7 @@
 {
   "name": "replat",
-  "version": "0.0.1",
-  "description": "Boler for another project",
+  "version": "0.0.2",
+  "description": "Boilerplate for Redux/React project",
   "main": "index.js",
   "repository": {
     "url": "https://github.com/konstantin24121/replat.git",
