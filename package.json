@@ -1,6 +1,6 @@
 {
   "name": "replat",
-  "version": "0.0.2",
+  "version": "0.0.2-key",
   "description": "Boilerplate for Redux/React project",
   "main": "index.js",
   "repository": {
